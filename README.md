@@ -178,7 +178,6 @@ If this is not the case, the script displays the expected syntax and stops with 
 
 Finally, `$1` contains the first argument, which is passed to the Docker container.
 
----
 
 Make it executable:
 
