@@ -23,9 +23,9 @@ Hexadécimal : 0xFF7F  (FF 7F)
 ## Structure du projet
 
 ```text
-.
 ├── convert.py
 ├── Dockerfile
+├── README-FR.md
 └── README.md
 ```
 
