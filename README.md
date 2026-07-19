@@ -169,6 +169,16 @@ fi
 
 docker run --rm convert "$1"
 ```
+`$#` contains the number of arguments passed to the script.  
+The condition checks that exactly one argument was provided.  
+
+If this is not the case, the script displays the expected syntax and stops with `exit 1`.  
+
+`fi` marks the end of the Bash `if` block.  
+
+Finally, `$1` contains the first argument, which is passed to the Docker container.
+
+---
 
 Make it executable:
 
