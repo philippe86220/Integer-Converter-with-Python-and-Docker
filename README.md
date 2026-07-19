@@ -162,6 +162,11 @@ Create a small Bash script named `convert`:
 ``` bash
 #!/bin/bash
 
+if [ "$#" -ne 1 ]; then
+    echo "Usage: convert <integer>"
+    exit 1
+fi
+
 docker run --rm convert "$1"
 ```
 
