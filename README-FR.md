@@ -254,6 +254,11 @@ et
 
 Au-delà, le masque 64 bits conserve seulement les 64 bits de poids faible.
 
+## Screenshots
+![Serveur](/doc//screenshot.png)
+
+---
+
 ## Remerciements
 
 La documentation README a été rédigée avec l'aide de ChatGPT par
