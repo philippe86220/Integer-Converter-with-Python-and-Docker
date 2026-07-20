@@ -53,9 +53,16 @@ def choose_width(n):
 | 32 bits | `int32_t` | -2 147 483 648 à 2 147 483 647 |
 | 64 bits | `int64_t` | -9 223 372 036 854 775 808 à 9 223 372 036 854 775 807 |
 
-### Complément à deux
 
-Python utilise des entiers de taille variable. Pour obtenir une représentation finie en complément à deux, le programme applique un masque correspondant à la largeur choisie :
+Et en français :
+
+```markdown
+## Complément à deux
+
+Python utilise des entiers de précision arbitraire.
+Pour les opérations bit à bit, les entiers négatifs se comportent comme s'ils étaient représentés en complément à deux avec un nombre illimité de bits `1` à gauche.
+
+Pour obtenir une représentation finie sur la largeur choisie, le programme applique le masque correspondant :
 
 ```python
 mask = (1 << total_bits) - 1
