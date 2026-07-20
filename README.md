@@ -213,6 +213,12 @@ Python reads 2599 from sys.argv[1]
 Error: 'abc' is not a valid integer.
 ```
 
+---
+
+## Screenshots
+![Serveur](/doc//screenshot.png)
+
+
 ## Acknowledgements
 
 The README documentation was written with the assistance of ChatGPT by
