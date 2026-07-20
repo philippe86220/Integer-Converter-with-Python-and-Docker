@@ -209,6 +209,12 @@ Python reads 2599 from sys.argv[1]
 
 ## Error Handling
 
+If the argument is not an entire:
+
+``` text
+convert abc
+```
+
 ``` text
 Error: 'abc' is not a valid integer.
 ```
