@@ -56,7 +56,6 @@ def choose_width(n):
 
 Et en français :
 
-```markdown
 ## Complément à deux
 
 Python utilise des entiers de précision arbitraire.
