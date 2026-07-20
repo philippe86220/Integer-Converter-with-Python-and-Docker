@@ -74,7 +74,8 @@ Par exemple, `-128` sur 8 bits devient :
 
 ### Affichage binaire
 
-La représentation binaire est complétée avec des zéros à gauche, puis regroupée par blocs de quatre bits :
+La représentation binaire est affichée sur la largeur sélectionnée. Si nécessaire, des zéros sont ajoutés à gauche, 
+puis les bits sont regroupés par blocs de 4 pour faciliter la lecture. :
 
 ```python
 bits = format(n & mask, f"0{total_bits}b")
