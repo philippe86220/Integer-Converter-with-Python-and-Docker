@@ -254,7 +254,7 @@ et
 
 Au-delà, le masque 64 bits conserve seulement les 64 bits de poids faible.
 
-## Screenshots
+## Aperçu
 ![Serveur](/doc//screenshot.png)
 
 ---
