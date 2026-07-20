@@ -86,8 +86,8 @@ For example, `-128` on 8 bits becomes:
 
 ### Binary Output
 
-The binary representation is left-padded with zeros and grouped into
-4-bit blocks.
+The binary representation is formatted to the selected width. When necessary, leading zeros are added, 
+and the bits are grouped into 4-bit blocks for readability.
 
 ### Hexadecimal Output
 
