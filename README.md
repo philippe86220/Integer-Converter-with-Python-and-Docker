@@ -218,6 +218,7 @@ Error: 'abc' is not a valid integer.
 ## Screenshots
 ![Serveur](/doc//screenshot.png)
 
+---
 
 ## Acknowledgements
 
