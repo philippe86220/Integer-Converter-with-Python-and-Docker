@@ -209,7 +209,7 @@ Python reads 2599 from sys.argv[1]
 
 ## Error Handling
 
-If the argument is not an entire:
+If the argument is not an integer:
 
 ``` text
 convert abc
