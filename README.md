@@ -214,6 +214,7 @@ If the argument is not an integer:
 ``` text
 convert abc
 ```
+The program responds :
 
 ``` text
 Error: 'abc' is not a valid integer.
