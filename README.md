@@ -66,13 +66,14 @@ These limits correspond to the following C/C++ types:
                                             9,223,372,036,854,775,807
   ------------------------------------------------------------------------
 
-### Two's Complement
+## Two's Complement
 
-Python integers have arbitrary precision. To obtain a finite two's
-complement representation, the program applies a bit mask matching the
-selected width:
+Python integers have arbitrary precision. 
+For bitwise operations, negative integers behave as if they were represented in two's complement with an unlimited number of leading `1` bits.
 
-``` python
+To obtain a finite representation on the selected width, the program applies a corresponding bit mask:
+
+```python
 mask = (1 << total_bits) - 1
 value = n & mask
 ```
