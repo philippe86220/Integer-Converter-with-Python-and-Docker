@@ -2,11 +2,11 @@
 
 This small project converts a decimal integer into its binary and hexadecimal representations.
 
+Unlike fixed-width integer types in languages such as C or C++, Python integers do not have a predefined size. The program therefore selects the smallest signed width suitable for the value: 8, 16, 32, or 64 bits.
+
 For bitwise operations, Python represents negative integers using a two's complement model with unlimited sign extension, that is, with an unlimited number of leading `1` bits.
 
 The program then applies a bit mask to keep only the bits corresponding to the selected width.
-
-It automatically selects the smallest signed width suitable for the value: 8, 16, 32, or 64 bits.
 
 ## Examples
 
