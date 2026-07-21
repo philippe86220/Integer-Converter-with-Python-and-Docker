@@ -270,7 +270,7 @@ Au-delà, le masque 64 bits conserve seulement les 64 bits de poids faible.
 
 Si vous débutez avec Python ou Docker, une explication détaillée est disponible.
 
-Chaque instruction des deux fichiers est expliquée ligne par ligne :
+Chaque instruction des deux fichiers est expliquée ligne par ligne (dans le même `.md)`:
 
 - [`convert.py`](LIGNE-par-LIGNE-FR.md)
 - [`Dockerfile`](LIGNE-par-LIGNE-FR.md)
