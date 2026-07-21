@@ -103,8 +103,7 @@ Pour 16 bits, le masque vaut `0xFFFF`.
     bits = format(n & mask, f"0{total_bits}b")
 ```
 
-L’expression `n & mask` conserve uniquement les bits de poids faible correspondant
-à la largeur sélectionnée.
+L’expression `n & masque` conserve uniquement les bits de `n` correspondant à la largeur sélectionnée. Le masque met à zéro tous les bits situés au-delà de cette largeur.
 
 Pour les opérations bit à bit, Python représente les entiers négatifs selon un
 modèle en complément à deux avec une extension illimitée du bit de signe.
