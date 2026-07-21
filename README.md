@@ -230,6 +230,27 @@ Error: 'abc' is not a valid integer.
 
 ---
 
+## For Beginners
+
+If you are new to Python or Docker, a detailed explanation is available.
+
+Every instruction in both files is explained line by line (in the same `.md`):
+
+- [`convert.py`](LINE-by-LINE-EN.md)
+- [`Dockerfile`](LINE-by-LINE-EN.md)
+
+The document explains:
+
+- automatic width selection (8, 16, 32, or 64 bits);
+- how the bit mask is built;
+- two's complement;
+- binary and hexadecimal formatting;
+- how `sys.argv` works;
+- the purpose of every `Dockerfile` instruction;
+- the complete execution flow of `docker run`.
+
+---
+
 ## Acknowledgements
 
 The README documentation was written with the assistance of ChatGPT by
