@@ -242,98 +242,120 @@ Les groupes sont réunis avec des espaces pour améliorer la lisibilité.
 
 ---
 
-### Fonction principale
+# Main et get_integer
 
-```python
+## Récupération de l'entier et programme principal
+
+Ces deux fonctions travaillent ensemble :
+
+-   `get_integer()` récupère un entier valide depuis la ligne de
+    commande ou le clavier.
+-   `main()` utilise cet entier pour effectuer la conversion et afficher
+    les résultats.
+
+### `get_integer()`
+
+``` python
+def get_integer():
+```
+
+Cette fonction retourne un entier valide.
+
+``` python
+if len(sys.argv) > 1:
+```
+
+Si un argument est présent sur la ligne de commande, il est utilisé.
+
+``` python
+try:
+    return int(sys.argv[1])
+```
+
+L'argument est converti en entier puis immédiatement retourné.
+
+Si la conversion échoue, un message d'erreur est affiché et le programme
+s'arrête.
+
+Si aucun argument n'a été fourni, la fonction passe en mode interactif :
+
+``` python
+while True:
+```
+
+La boucle continue jusqu'à ce que l'utilisateur saisisse un entier
+valide.
+
+``` python
+saisie = input("Entrez un entier : ")
+return int(saisie)
+```
+
+Si la valeur saisie est valide, elle est convertie puis retournée.
+
+En cas de `ValueError`, un message d'erreur est affiché et une nouvelle
+saisie est demandée.
+
+En cas de `EOFError` (par exemple avec `docker run --rm convert` sans
+l'option `-it`), le programme affiche un message explicatif puis
+s'arrête.
+
+------------------------------------------------------------------------
+
+### `main()`
+
+``` python
 def main():
 ```
 
 Cette fonction contient le déroulement principal du programme.
 
-```python
-    if len(sys.argv) > 1:
-        n = int(sys.argv[1])
+``` python
+n = get_integer()
 ```
 
-`sys.argv` contient les éléments transmis sur la ligne de commande.
+Appelle `get_integer()` et stocke l'entier retourné dans `n`.
 
-Si au moins un argument a été fourni, le programme lit `sys.argv[1]` et le
-convertit en entier avec `int()`.
+À partir de ce moment, le reste du programme n'a plus besoin de savoir
+si la valeur provient de la ligne de commande ou d'une saisie
+interactive.
+
+``` python
+print(f"Décimal     : {n}")
+```
+
+Affiche la valeur décimale.
+
+``` python
+print(f"Binaire     : {format_binary(n)}")
+```
+
+Calcule puis affiche la représentation binaire.
+
+``` python
+print(f"Hexadécimal : 0x{format_hex(n).replace(' ', '')}  ({format_hex(n)})")
+```
+
+Calcule puis affiche la représentation hexadécimale sous deux formes :
+
+-   une forme compacte précédée de `0x` ;
+-   une forme regroupée par octets entre parenthèses.
 
 Exemple :
 
-```bash
-python convert.py -8
-```
-
-Dans ce cas :
-
-```python
-n = -8
-```
-
-```python
-    else:
-        n = int(input("Entrez un entier : "))
-```
-
-Si aucun argument n’a été fourni, le programme demande une valeur de manière
-interactive avec `input()`.
-
-```python
-    total_bits = choose_width(n)
-```
-
-La fonction `choose_width()` détermine ensuite la largeur signée adaptée à la
-valeur.
-
-```python
-    binary = format_binary(n, total_bits)
-    hexadecimal = format_hex(n, total_bits)
-```
-
-Ces deux lignes calculent les représentations binaire et hexadécimale en utilisant
-la même largeur.
-
-```python
-    print(f"Décimal     : {n}")
-```
-
-Affiche la valeur décimale originale.
-
-```python
-    print(f"Binaire     : {binary}")
-```
-
-Affiche la représentation binaire regroupée par blocs de quatre bits.
-
-```python
-    print(
-        f"Hexadécimal : 0x{hexadecimal.replace(' ', '')}"
-        f"  ({hexadecimal})"
-    )
-```
-
-La représentation hexadécimale est affichée sous deux formes :
-
-- une forme compacte précédée de `0x` ;
-- une forme regroupée par octets entre parenthèses.
-
-Pour `-8`, le résultat sur 8 bits est :
-
-```text
+``` text
 Décimal     : -8
 Binaire     : 1111 1000
 Hexadécimal : 0xF8  (F8)
 ```
 
-La méthode :
+L'expression :
 
-```python
-hexadecimal.replace(" ", "")
+``` python
+format_hex(n).replace(" ", "")
 ```
 
-supprime les espaces afin de produire la forme compacte `0xF8`.
+supprime les espaces afin d'obtenir la forme compacte.
 
 ---
 
