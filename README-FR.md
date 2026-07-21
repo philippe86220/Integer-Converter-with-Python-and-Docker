@@ -266,6 +266,27 @@ Au-delà, le masque 64 bits conserve seulement les 64 bits de poids faible.
 
 ---
 
+## Pour les débutants
+
+Si vous débutez avec Python ou Docker, une explication détaillée est disponible.
+
+Chaque instruction des deux fichiers est expliquée ligne par ligne :
+
+- [`convert.py`](LIGNE-par-LIGNE-FR.md)
+- [`Dockerfile`](LIGNE-par-LIGNE-FR.md)
+
+Le document explique notamment :
+
+- la sélection automatique de la largeur (8, 16, 32 ou 64 bits) ;
+- la construction du masque binaire ;
+- le complément à deux ;
+- le formatage des représentations binaire et hexadécimale ;
+- le fonctionnement de `sys.argv` ;
+- le rôle de chaque instruction du `Dockerfile` ;
+- le déroulement complet de `docker run`.
+
+---
+
 ## Remerciements
 
 La documentation README a été rédigée avec l'aide de ChatGPT par
