@@ -1,8 +1,12 @@
 # Convertisseur d’entiers avec Python et Docker
 
-Ce petit projet convertit un entier décimal en représentation binaire et hexadécimale. Pour les nombres négatifs, il utilise le complément à deux.
+Ce petit projet convertit un entier décimal en ses représentations binaire et hexadécimale.
 
-Le programme choisit automatiquement la largeur signée minimale adaptée à la valeur : 8, 16, 32 ou 64 bits.
+Pour les valeurs négatives, les opérations bit à bit de Python se comportent comme si les entiers étaient représentés en complément à deux avec un nombre illimité de bits `1` à gauche.
+
+Le programme applique un masque binaire afin d’afficher la valeur sur la largeur sélectionnée.
+
+Le programme sélectionne automatiquement la plus petite largeur signée adaptée à la valeur : 8, 16, 32 ou 64 bits.
 
 ## Exemples
 
