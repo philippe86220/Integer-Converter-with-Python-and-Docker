@@ -2,11 +2,11 @@
 
 Ce petit projet convertit un entier décimal en ses représentations binaire et hexadécimale.
 
+Contrairement aux types entiers de largeur fixe utilisés notamment en C ou en C++, les entiers Python n’ont pas de taille prédéfinie. Le programme sélectionne donc automatiquement la plus petite largeur signée adaptée à la valeur : 8, 16, 32 ou 64 bits.
+
 Pour les opérations bit à bit, Python représente les entiers négatifs selon un modèle en complément à deux avec une extension illimitée du bit de signe, c’est-à-dire avec un nombre illimité de bits `1` à gauche.
 
 Le programme applique ensuite un masque afin de conserver uniquement les bits correspondant à la largeur sélectionnée.
-
-Il sélectionne automatiquement la plus petite largeur signée adaptée à la valeur : 8, 16, 32 ou 64 bits.
 
 ## Exemples
 
