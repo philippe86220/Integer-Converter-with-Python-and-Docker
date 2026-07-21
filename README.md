@@ -1,11 +1,11 @@
 # Integer Converter with Python and Docker
 
-This small project converts a decimal integer into its binary and
-hexadecimal representations. For negative numbers, it uses two's
-complement.
+This small project converts a decimal integer into its binary and hexadecimal representations.
 
-The program automatically selects the smallest signed width suitable for
-the value: 8, 16, 32, or 64 bits.
+For negative values, Python's bitwise operations behave as if integers were represented in two's complement with an unlimited number of leading `1` bits. 
+The program applies a bit mask to display the value using the selected width.
+
+The program automatically selects the smallest signed width suitable for the value: 8, 16, 32, or 64 bits.
 
 ## Examples
 
