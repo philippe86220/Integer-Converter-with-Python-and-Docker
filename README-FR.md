@@ -2,14 +2,11 @@
 
 Ce petit projet convertit un entier décimal en ses représentations binaire et hexadécimale.
 
-Pour les opérations bit à bit, Python représente les entiers négatifs selon un modèle en complément à deux avec une extension illimitée  
-du bit de signe, c’est-à-dire avec un nombre illimité de bits `1` à gauche.
+Pour les opérations bit à bit, Python représente les entiers négatifs selon un modèle en complément à deux avec une extension illimitée du bit de signe, c’est-à-dire avec un nombre illimité de bits `1` à gauche.
 
-Le programme applique ensuite un masque afin de limiter cette représentation à la largeur sélectionnée.
+Le programme applique ensuite un masque afin de conserver uniquement les bits correspondant à la largeur sélectionnée.
 
-Le programme applique un masque binaire afin d’afficher la valeur sur la largeur sélectionnée.
-
-Le programme sélectionne automatiquement la plus petite largeur signée adaptée à la valeur : 8, 16, 32 ou 64 bits.
+Il sélectionne automatiquement la plus petite largeur signée adaptée à la valeur : 8, 16, 32 ou 64 bits.
 
 ## Exemples
 
