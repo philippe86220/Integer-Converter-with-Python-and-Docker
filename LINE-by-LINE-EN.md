@@ -238,9 +238,9 @@ The groups are joined with spaces to improve readability.
 
 ---
 
-# Main and get_integer
+## Main and get_integer
 
-## Getting the integer and main program
+### Getting the integer and main program
 
 These two functions work together:
 
