@@ -474,3 +474,5 @@ Decimal     : -8
 Binary      : 1111 1000
 Hexadecimal : 0xF8  (F8)
 ```
+
+10. the container stops and is then removed because of `--rm`.
