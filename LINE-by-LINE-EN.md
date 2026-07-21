@@ -100,8 +100,7 @@ For 16 bits, the mask is `0xFFFF`.
     bits = format(n & mask, f"0{total_bits}b")
 ```
 
-The expression `n & mask` keeps only the least significant bits corresponding
-to the selected width.
+The expression n & mask keeps only the least significant bits of n. The mask clears all higher bits outside the selected width.
 
 For bitwise operations, Python represents negative integers using a two's
 complement model with unlimited sign extension.
