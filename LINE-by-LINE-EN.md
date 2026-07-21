@@ -346,6 +346,7 @@ format_hex(n).replace(" ", "")
 
 removes the spaces to produce the compact form.
 
+---
 
 ### Program entry point
 
