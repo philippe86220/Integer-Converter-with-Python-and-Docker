@@ -2,10 +2,11 @@
 
 This small project converts a decimal integer into its binary and hexadecimal representations.
 
-For negative values, Python's bitwise operations behave as if integers were represented in two's complement with an unlimited number of leading `1` bits. 
-The program applies a bit mask to display the value using the selected width.
+For bitwise operations, Python represents negative integers using a two's complement model with unlimited sign extension, that is, with an unlimited number of leading `1` bits.
 
-The program automatically selects the smallest signed width suitable for the value: 8, 16, 32, or 64 bits.
+The program then applies a bit mask to keep only the bits corresponding to the selected width.
+
+It automatically selects the smallest signed width suitable for the value: 8, 16, 32, or 64 bits.
 
 ## Examples
 
