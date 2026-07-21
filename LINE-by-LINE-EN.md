@@ -238,9 +238,9 @@ The groups are joined with spaces to improve readability.
 
 ---
 
-## Main and get_integer
+# Main and get_integer
 
-### Getting the integer and main program
+## Getting the integer and main program
 
 These two functions work together:
 
@@ -345,6 +345,7 @@ format_hex(n).replace(" ", "")
 ```
 
 removes the spaces to produce the compact form.
+
 
 ### Program entry point
 
