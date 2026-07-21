@@ -238,100 +238,113 @@ The groups are joined with spaces to improve readability.
 
 ---
 
-### Main function
+# Main and get_integer
 
-```python
+## Getting the integer and main program
+
+These two functions work together:
+
+-   `get_integer()` retrieves a valid integer from either the command
+    line or the keyboard.
+-   `main()` uses this integer to perform the conversion and display the
+    results.
+
+### `get_integer()`
+
+``` python
+def get_integer():
+```
+
+This function returns a valid integer.
+
+``` python
+if len(sys.argv) > 1:
+```
+
+If a command-line argument is present, it is used.
+
+``` python
+try:
+    return int(sys.argv[1])
+```
+
+The argument is converted into an integer and immediately returned.
+
+If the conversion fails, an error message is displayed and the program
+exits.
+
+If no command-line argument is supplied, the function switches to
+interactive mode:
+
+``` python
+while True:
+```
+
+The loop continues until a valid integer is entered.
+
+``` python
+value = input("Enter an integer: ")
+return int(value)
+```
+
+If the entered value is invalid, the user is asked to try again.
+
+If an `EOFError` occurs (for example `docker run --rm convert` without
+`-it`), the program exits after displaying an explanatory message.
+
+------------------------------------------------------------------------
+
+### `main()`
+
+``` python
 def main():
 ```
 
-This function contains the main execution flow of the program.
+This function contains the main execution flow.
 
-```python
-    if len(sys.argv) > 1:
-        n = int(sys.argv[1])
+``` python
+n = get_integer()
 ```
 
-`sys.argv` contains the elements supplied on the command line.
+Calls `get_integer()` and stores the returned integer in `n`.
 
-If at least one argument was provided, the program reads `sys.argv[1]` and
-converts it to an integer with `int()`.
+From this point onward, the program no longer needs to know whether the
+value came from the command line or interactive input.
+
+``` python
+print(f"Decimal     : {n}")
+```
+
+Displays the decimal value.
+
+``` python
+print(f"Binary      : {format_binary(n)}")
+```
+
+Calculates and displays the binary representation.
+
+``` python
+print(f"Hexadecimal : 0x{format_hex(n).replace(' ', '')}  ({format_hex(n)})")
+```
+
+Calculates and displays the hexadecimal representation in compact and
+grouped forms.
 
 Example:
 
-```bash
-python convert.py -8
-```
-
-In this case:
-
-```python
-n = -8
-```
-
-```python
-    else:
-        n = int(input("Enter an integer: "))
-```
-
-If no argument was supplied, the program asks for a value interactively with
-`input()`.
-
-```python
-    total_bits = choose_width(n)
-```
-
-The `choose_width()` function then determines the signed width suitable for the
-value.
-
-```python
-    binary = format_binary(n, total_bits)
-    hexadecimal = format_hex(n, total_bits)
-```
-
-These two lines calculate the binary and hexadecimal representations using the
-same width.
-
-```python
-    print(f"Decimal     : {n}")
-```
-
-Displays the original decimal value.
-
-```python
-    print(f"Binary      : {binary}")
-```
-
-Displays the binary representation grouped into blocks of four bits.
-
-```python
-    print(
-        f"Hexadecimal : 0x{hexadecimal.replace(' ', '')}"
-        f"  ({hexadecimal})"
-    )
-```
-
-The hexadecimal representation is displayed in two forms:
-
-- a compact form prefixed with `0x`;
-- a byte-grouped form in parentheses.
-
-For `-8`, the result on 8 bits is:
-
-```text
+``` text
 Decimal     : -8
 Binary      : 1111 1000
 Hexadecimal : 0xF8  (F8)
 ```
 
-The method:
+The expression:
 
-```python
-hexadecimal.replace(" ", "")
+``` python
+format_hex(n).replace(" ", "")
 ```
 
-removes the spaces to produce the compact form `0xF8`.
-
----
+removes the spaces to produce the compact form.
 
 ### Program entry point
 
