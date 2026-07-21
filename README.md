@@ -234,7 +234,7 @@ Error: 'abc' is not a valid integer.
 
 If you are new to Python or Docker, a detailed explanation is available.
 
-Every instruction in both files is explained line by line (in the same `.md`):
+Both files are explained line by line in the following document:
 
 - [`convert.py`](LINE-by-LINE-EN.md)
 - [`Dockerfile`](LINE-by-LINE-EN.md)
