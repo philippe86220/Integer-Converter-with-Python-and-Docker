@@ -253,46 +253,69 @@ These two functions work together:
 
 ### `get_integer()`
 
-``` python
+```python
 def get_integer():
 ```
 
-This function returns a valid integer.
+This function retrieves and returns a valid integer.
 
-``` python
+```python
 if len(sys.argv) > 1:
 ```
 
-If a command-line argument is present, it is used.
+This is the first case: an argument was supplied on the command line.
 
-``` python
+```python
 try:
     return int(sys.argv[1])
 ```
 
 The argument is converted into an integer and immediately returned.
 
-If the conversion fails, an error message is displayed and the program
-exits.
+If the conversion fails, a `ValueError` is raised, an error message is displayed,
+and the program exits.
 
-If no command-line argument is supplied, the function switches to
-interactive mode:
+If no command-line argument is present, the `if` block is skipped and execution
+continues with the second case:
 
-``` python
+```python
 while True:
 ```
 
-The loop continues until a valid integer is entered.
+This loop handles input from standard input.
 
-``` python
-value = input("Enter an integer: ")
-return int(value)
+If the container was started in interactive mode, for example with:
+
+```bash
+docker run -it --rm convert
 ```
 
-If the entered value is invalid, the user is asked to try again.
+the program asks the user to enter an integer:
 
-If an `EOFError` occurs (for example `docker run --rm convert` without
-`-it`), the program exits after displaying an explanatory message.
+```python
+saisie = input("Entrez un entier : ")
+return int(saisie)
+```
+
+If the entered value is valid, it is converted into an integer and returned.
+
+If the entered value is invalid, a `ValueError` is raised, an error message is
+displayed, and the loop asks for another value.
+
+If no standard input is available, for example with:
+
+```bash
+docker run --rm convert
+```
+
+`input()` raises an `EOFError`. The program then displays an explanatory message
+and exits:
+
+```text
+Entrez un entier :
+Aucune entrée disponible. Utilise 'docker run -it ...' pour le mode interactif,
+ou passe un entier en argument.
+```
 
 ------------------------------------------------------------------------
 
