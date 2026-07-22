@@ -70,7 +70,8 @@ For example:
 ### Formatting the binary representation
 
 ```python
-def format_binary(n, total_bits, group_size=4):
+def format_binary(n, group_size=4):
+    total_bits = choose_width(n)
 ```
 
 This line defines a function that receives:
