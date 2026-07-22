@@ -343,7 +343,7 @@ Hexadecimal : 0xF8  (F8)
 The expression:
 
 ``` python
-format_hex(n).replace(" ", "")
+format_hex(n).replace(' ', '')
 ```
 
 removes the spaces to produce the compact form.
