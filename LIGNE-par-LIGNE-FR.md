@@ -76,11 +76,11 @@ def format_binary(n, group_size=4):
     total_bits = choose_width(n)
 ```
 
-Cette ligne définit une fonction qui reçoit :
+Cette ligne définit une fonction qui reçoit deux paramètres et calcul `total_bits` :
 
 - `n` : l’entier à convertir ;
 - `group_size` : le nombre de bits par groupe, fixé à 4 par défaut ;
-- total_bits : la largeur sélectionnée, soit 8, 16, 32 ou 64 bits.
+- `total_bits` : la largeur sélectionnée, soit 8, 16, 32 ou 64 bits.
   
 
 ```python
