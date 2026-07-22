@@ -72,14 +72,16 @@ Par exemple :
 ### Formatage de la représentation binaire
 
 ```python
-def format_binary(n, total_bits, group_size=4):
+def format_binary(n, group_size=4):
+    total_bits = choose_width(n)
 ```
 
 Cette ligne définit une fonction qui reçoit :
 
 - `n` : l’entier à convertir ;
-- `total_bits` : la largeur sélectionnée, soit 8, 16, 32 ou 64 bits ;
-- `group_size` : le nombre de bits par groupe, fixé à 4 par défaut.
+- `group_size` : le nombre de bits par groupe, fixé à 4 par défaut ;
+- total_bits : la largeur sélectionnée, soit 8, 16, 32 ou 64 bits.
+  
 
 ```python
     mask = (1 << total_bits) - 1
