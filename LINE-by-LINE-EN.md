@@ -74,7 +74,7 @@ def format_binary(n, group_size=4):
     total_bits = choose_width(n)
 ```
 
-This line defines a function that receives two parameters and calculates the value of total_bits.
+This lines defines a function that receives two parameters and calculates the value of total_bits.
 
 - `n`: the integer to convert;
 - `group_size`: the number of bits in each group, set to 4 by default;
