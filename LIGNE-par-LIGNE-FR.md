@@ -167,7 +167,8 @@ La méthode `join()` réunit les groupes en insérant un espace entre eux :
 ### Formatage de la représentation hexadécimale
 
 ```python
-def format_hex(n, total_bits):
+def format_hex(n):
+    total_bits = choose_width(n)
 ```
 
 Cette fonction produit la représentation hexadécimale de l’entier sur la largeur
