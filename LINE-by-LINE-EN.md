@@ -77,8 +77,8 @@ def format_binary(n, group_size=4):
 This line defines a function that receives:
 
 - `n`: the integer to convert;
-- `total_bits`: the selected width, either 8, 16, 32, or 64 bits;
 - `group_size`: the number of bits in each group, set to 4 by default.
+- `total_bits`: the selected width, either 8, 16, 32, or 64 bits;
 
 ```python
     mask = (1 << total_bits) - 1
