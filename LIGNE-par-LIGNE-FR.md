@@ -258,51 +258,69 @@ Ces deux fonctions travaillent ensemble :
 
 ### `get_integer()`
 
-``` python
+```python
 def get_integer():
 ```
 
-Cette fonction retourne un entier valide.
+Cette fonction récupère puis retourne un entier valide.
 
-``` python
+```python
 if len(sys.argv) > 1:
 ```
 
-Si un argument est présent sur la ligne de commande, il est utilisé.
+Il s'agit du premier cas : un argument a été fourni sur la ligne de commande.
 
-``` python
+```python
 try:
     return int(sys.argv[1])
 ```
 
 L'argument est converti en entier puis immédiatement retourné.
 
-Si la conversion échoue, un message d'erreur est affiché et le programme
-s'arrête.
+Si la conversion échoue, une exception `ValueError` est déclenchée, un message
+d'erreur est affiché et le programme s'arrête.
 
-Si aucun argument n'a été fourni, la fonction passe en mode interactif :
+Si aucun argument n'est présent sur la ligne de commande, le bloc `if` est ignoré
+et l'exécution se poursuit avec le second cas :
 
-``` python
+```python
 while True:
 ```
 
-La boucle continue jusqu'à ce que l'utilisateur saisisse un entier
-valide.
+Cette boucle gère la saisie depuis l'entrée standard.
 
-``` python
+Si le conteneur a été lancé en mode interactif, par exemple avec :
+
+```bash
+docker run -it --rm convert
+```
+
+le programme demande à l'utilisateur de saisir un entier :
+
+```python
 saisie = input("Entrez un entier : ")
 return int(saisie)
 ```
 
-Si la valeur saisie est valide, elle est convertie puis retournée.
+Si la valeur saisie est valide, elle est convertie en entier puis retournée.
 
-En cas de `ValueError`, un message d'erreur est affiché et une nouvelle
-saisie est demandée.
+Si la valeur saisie est invalide, une exception `ValueError` est déclenchée, un
+message d'erreur est affiché et la boucle demande une nouvelle valeur.
 
-En cas de `EOFError` (par exemple avec `docker run --rm convert` sans
-l'option `-it`), le programme affiche un message explicatif puis
-s'arrête.
+Si aucune entrée standard n'est disponible, par exemple avec :
 
+```bash
+docker run --rm convert
+```
+
+`input()` déclenche une exception `EOFError`. Le programme affiche alors un
+message explicatif puis s'arrête :
+
+```text
+Entrez un entier :
+Aucune entrée disponible. Utilise 'docker run -it ...' pour le mode interactif,
+ou passe un entier en argument.
+```
 ------------------------------------------------------------------------
 
 ### `main()`
