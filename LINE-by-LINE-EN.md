@@ -163,7 +163,8 @@ The `join()` method combines the groups by inserting a space between them:
 ### Formatting the hexadecimal representation
 
 ```python
-def format_hex(n, total_bits):
+def format_hex(n):
+    total_bits = choose_width(n)
 ```
 
 This function produces the hexadecimal representation of the integer using the
